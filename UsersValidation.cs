@@ -45,11 +45,20 @@ namespace Regix_problem
             Console.WriteLine(result);
         }
         //UC5 Password Validation minum 8 Character
-        public const string PASSWORD_REGEX = "[a-z,A-Z,0-9]{8}$";
+        public const string PASSWORD_REGEX = "[a-z,A-Z,0-9]{8,}$";
         public void ValidationPassword(string password)
         {
             Regex regex = new Regex(PASSWORD_REGEX);
             bool result = regex.IsMatch(password);
+            Console.WriteLine(result);
+        }
+        //UC6
+        //Should  have at least 1 Upper Case
+        public const string UPPERCASE_REGEX = "^[A-Z][a-z]{7}$";
+        public void ValidationUppercase(string Uppercase)
+        {
+            Regex regex = new Regex(UPPERCASE_REGEX);
+            bool result = regex.IsMatch(Uppercase);
             Console.WriteLine(result);
         }
     }
