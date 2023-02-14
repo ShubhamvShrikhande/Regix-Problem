@@ -28,12 +28,20 @@ namespace Regix_problem
         }
         //UC3
         //E-Mail validation
-        public const string EMAIL_REGEX =@"^[a-z][0-9]+[@][a-z][A-Z]+[.][a-z][A-Z]{2,3}$";
-        
+        public const string EMAIL_REGEX = "^[a-z0-9]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}$";
         public void ValidationEmail(string email)
         {
             Regex regex = new Regex(EMAIL_REGEX);
             bool result = regex.IsMatch(email);
+            Console.WriteLine(result);
+        }
+        //UC4
+        // Pre define Mobile Format Validation
+        public const string MOBILENUMBER_REGEX = "^[0-9]+[\\s]+[0-9]{10}$";
+        public void ValidationPhoneNumber(string phonenumber)
+        {
+            Regex regex = new Regex(MOBILENUMBER_REGEX);
+            bool result = regex.IsMatch(phonenumber);
             Console.WriteLine(result);
         }
     }
