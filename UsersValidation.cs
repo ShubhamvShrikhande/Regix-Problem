@@ -10,6 +10,7 @@ namespace Regix_problem
 {
     internal class UsersValidation
     {
+
         public const string FIRST_NAME_REGEX = "^[A-Z][a-zA-Z]{2}$";
         public void ValidationFirstName(string firstname)
         {
@@ -59,6 +60,15 @@ namespace Regix_problem
         {
             Regex regex = new Regex(UPPERCASE_REGEX);
             bool result = regex.IsMatch(Uppercase);
+            Console.WriteLine(result);
+        }
+        //UC7
+        //Should  have at least 1 numeric number in password
+        public const string NUMERICPASSWORD_REGEX = "^[a-z0-9A-Z]{8}$";
+        public void ValidationNumericPassword(string numericpassword)
+        {
+            Regex regex = new Regex(NUMERICPASSWORD_REGEX);
+            bool result = regex.IsMatch(numericpassword);
             Console.WriteLine(result);
         }
     }
